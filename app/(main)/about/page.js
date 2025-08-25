@@ -262,7 +262,7 @@ const AboutUs = () => {
               <div className="md:w-1/3 p-8 bg-blue-700 text-white flex flex-col justify-center items-center">
                 <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white mb-6">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                    src="/assets/ceo.jpg" 
                     alt="CEO of Techlight" 
                     className="w-full h-full object-cover"
                   />
