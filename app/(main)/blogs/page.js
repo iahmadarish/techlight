@@ -11,7 +11,7 @@ const BlogPage = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "Why Choose Job-Oriented IT Training in Bangladesh",
+      title: "Why Choose Job-Oriented  IT Training in Bangladesh",
       excerpt: "Discover how Techlight's job-oriented approach bridges the gap between academic learning and industry demands, ensuring 98% employment rate for our graduates.",
       date: "January 15, 2025",
       author: "Md. Rafiqul Islam",
