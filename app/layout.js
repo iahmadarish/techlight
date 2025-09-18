@@ -15,7 +15,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-    title: "Techlight - IT Institute",
+    title: "ADUST - Learning Management system",
     description: "Explore || Learn || Build || Share",
 };
 
