@@ -17,8 +17,10 @@ const poppins = Poppins({
 export const metadata = {
     title: "ADUST - Learning Management system",
     description: "Explore || Learn || Build || Share",
+    icons: {
+        icon: "/logo/adust.jpg", 
+    },
 };
-
 export default async function RootLayout({ children }) {
     await dbConnect();
 
