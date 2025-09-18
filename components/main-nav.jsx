@@ -140,7 +140,7 @@ export function MainNav({ items, children }) {
                                     {loggedInUser?.firstName.slice(0, 1).toUpperCase() +
                                         loggedInUser?.lastName.slice(0, 1).toUpperCase()}
                                 </AvatarFallback>
-                            </Avatar>
+                            </Avatar> 
                         </div>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-56 mt-4">
