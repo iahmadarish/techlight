@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { MobileNav } from "@/components/mobile-nav";
-import { X, Menu } from "lucide-react";
+import { X, Menu, ChevronDown } from "lucide-react";
 import { Button, buttonVariants } from "./ui/button";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Logo } from "./logo";
@@ -52,17 +52,44 @@ export function MainNav({ items, children }) {
                 <Logo />
 
                 {items?.length ? (
-                    <nav className="hidden lg:flex flex-1 justify-center gap-6">
+                    <nav className="hidden lg:flex flex-1 items-center justify-end gap-10 mr-4">
                         {items?.map((item, index) => (
-                            <Link
-                                key={index}
-                                href={item.disabled ? "#" : item.href}
-                                className={cn(
-                                    "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
+                            <div key={index} className="relative group">
+                                {item.dropdown ? (
+                                    // Dropdown Menu Item
+                                    <DropdownMenu>
+                                        <DropdownMenuTrigger asChild>
+                                            <button
+                                                className={cn(
+                                                    "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm gap-1",
+                                                )}
+                                            >
+                                                {item.title}
+                                                <ChevronDown className="h-4 w-4" />
+                                            </button>
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent align="start" className="w-56 mt-2">
+                                            {item.dropdown.map((dropdownItem, dropdownIndex) => (
+                                                <DropdownMenuItem key={dropdownIndex} className="cursor-pointer" asChild>
+                                                    <Link href={dropdownItem.href}>
+                                                        {dropdownItem.title}
+                                                    </Link>
+                                                </DropdownMenuItem>
+                                            ))}
+                                        </DropdownMenuContent>
+                                    </DropdownMenu>
+                                ) : (
+                                    // Regular Link Item
+                                    <Link
+                                        href={item.disabled ? "#" : item.href}
+                                        className={cn(
+                                            "flex items-center  text-lg font-medium transition-colors hover:text-foreground/80 sm:text-lg",
+                                        )}
+                                    >
+                                        {item.title}
+                                    </Link>
                                 )}
-                            >
-                                {item.title}
-                            </Link>
+                            </div>
                         ))}
                     </nav>
                 ) : null}

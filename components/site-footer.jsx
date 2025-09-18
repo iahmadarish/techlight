@@ -1,36 +1,42 @@
 import Image from "next/image";
-import { Facebook, Youtube, Linkedin, Twitter, Mail, Phone } from "lucide-react";
+import { Facebook, Youtube, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { Logo } from "./logo";
 import Link from "next/link";
 
 export default function SiteFooter() {
     return (
-        <footer className="bg-slate-800 text-white px-6 py-12 md:px-[230px] border-t border-white/30">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <footer className="bg-white text-gray-800 py-12 border-t border-gray-200">
+            <div className="grid grid-cols-1 md:grid-cols-4 container gap-10">
                 {/* //? Contact Info */}
                 <div>
-                    <Logo />
-                    <p className="text-sm leading-6 mt-4">
-                        CNS Tower, 43/R/5-A, 4th Floor, West Panthapath, Dhaka-1205 (Beside Square
-                        Hospital)
+                    <div className="flex items-center mb-4">
+                        <div className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                            A
+                        </div>
+                        <span className="text-blue-800 font-semibold text-sm">ADUST</span>
+                    </div>
+                    <p className="text-sm leading-6 mt-4 flex items-start">
+                        <MapPin className="w-4 h-4 mt-1 mr-2 flex-shrink-0 text-blue-700" />
+                        Sector# 15 (Near Uttara Passport Office)
+                        Uttara, Dhaka-1230
                     </p>
-                    <p className="mt-4 mb-1 text-sm flex items-center gap-[6px]">
-                        <Mail className="w-[18px] h-[18px]" /> techlightclc@gmail.com
+                    <p className="mt-4 mb-1 text-sm flex items-center gap-2">
+                        <Mail className="w-4 h-4 text-blue-700" /> info@adust.edu.bd
                     </p>
-                    <p className="text-sm mb-6 flex items-center gap-1">
-                        <Phone className="w-4 h-4" /> +8801886001973
+                    <p className="text-sm mb-6 flex items-center gap-2">
+                        <Phone className="w-4 h-4 text-blue-700" /> +880 1787666578
                     </p>
                     <div className="flex space-x-4 mt-4">
-                        <a href="#" className="hover:text-teal-400">
+                        <a href="#" className="text-gray-600 hover:text-blue-700 transition-colors">
                             <Facebook size={22} />
                         </a>
-                        <a href="#" className="hover:text-teal-400">
+                        <a href="#" className="text-gray-600 hover:text-blue-700 transition-colors">
                             <Youtube size={22} />
                         </a>
-                        <a href="#" className="hover:text-teal-400">
+                        <a href="#" className="text-gray-600 hover:text-blue-700 transition-colors">
                             <Linkedin size={22} />
                         </a>
-                        <a href="#" className="hover:text-teal-400">
+                        <a href="#" className="text-gray-600 hover:text-blue-700 transition-colors">
                             <Twitter size={22} />
                         </a>
                     </div>
@@ -38,70 +44,102 @@ export default function SiteFooter() {
 
                 {/* //? Quick Links */}
                 <div className="md:mx-auto">
-                    <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-                    <ul className="space-y-2 text-sm">
+                    <h3 className="text-lg font-semibold mb-4 text-blue-800">Quick Links</h3>
+                    <ul className="space-y-3 text-sm">
                         <li>
-                            <Link href="/" className="hover:text-teal-400">
+                            <Link href="/" className="hover:text-blue-700 transition-colors flex items-center">
+                                <span className="w-1.5 h-1.5 bg-blue-200 rounded-full mr-2"></span>
                                 Home
                             </Link>
                         </li>
                         <li>
-                            <Link href="/about" className="hover:text-teal-400">
-                                About Us
+                            <Link href="/about" className="hover:text-blue-700 transition-colors flex items-center">
+                                <span className="w-1.5 h-1.5 bg-blue-200 rounded-full mr-2"></span>
+                                About University
                             </Link>
                         </li>
                         <li>
-                            <Link href="#courses" className="hover:text-teal-400">
-                                Our Services
+                            <Link href="#programs" className="hover:text-blue-700 transition-colors flex items-center">
+                                <span className="w-1.5 h-1.5 bg-blue-200 rounded-full mr-2"></span>
+                                Academic Programs
                             </Link>
                         </li>
                         <li>
-                            <Link href="/contact" className="hover:text-teal-400">
+                            <Link href="/admission" className="hover:text-blue-700 transition-colors flex items-center">
+                                <span className="w-1.5 h-1.5 bg-blue-200 rounded-full mr-2"></span>
+                                Admissions
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/contact" className="hover:text-blue-700 transition-colors flex items-center">
+                                <span className="w-1.5 h-1.5 bg-blue-200 rounded-full mr-2"></span>
                                 Contact Us
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/clients" className="hover:text-teal-400">
-                                Our Clients
                             </Link>
                         </li>
                     </ul>
                 </div>
 
-                {/* //? Payment Info */}
+                {/* //? Academic Resources */}
                 <div className="md:ml-auto">
-                    <h3 className="text-xl font-semibold mb-4">Our Payment Merchant</h3>
-                    <p className="text-sm font-medium text-yellow-500 mb-4">+8801711310768</p>
-                    <Image
-                        src="/accounts.webp"
-                        alt="Payment Methods"
-                        width={300}
-                        height={100}
-                        className="rounded-lg shadow-lg"
-                    />
+                    <h3 className="text-lg font-semibold mb-4 text-blue-800">Academic Resources</h3>
+                    <ul className="space-y-3 text-sm">
+                        <li>
+                            <Link href="/library" className="hover:text-blue-700 transition-colors flex items-center">
+                                <span className="w-1.5 h-1.5 bg-blue-200 rounded-full mr-2"></span>
+                                Digital Library
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/research" className="hover:text-blue-700 transition-colors flex items-center">
+                                <span className="w-1.5 h-1.5 bg-blue-200 rounded-full mr-2"></span>
+                                Research Portal
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/lms" className="hover:text-blue-700 transition-colors flex items-center">
+                                <span className="w-1.5 h-1.5 bg-blue-200 rounded-full mr-2"></span>
+                                Learning Management System
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/faculty" className="hover:text-blue-700 transition-colors flex items-center">
+                                <span className="w-1.5 h-1.5 bg-blue-200 rounded-full mr-2"></span>
+                                Faculty Directory
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/calendar" className="hover:text-blue-700 transition-colors flex items-center">
+                                <span className="w-1.5 h-1.5 bg-blue-200 rounded-full mr-2"></span>
+                                Academic Calendar
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
 
-                {/* //? QR Code */}
+                {/* //? University Info */}
                 <div className="md:ml-auto">
-                    <h3 className="text-xl font-semibold mb-4">Scan to Pay</h3>
-                    <Image
-                        src="/TechLight_Bar_Code.png"
-                        alt="QR Code"
-                        width={160}
-                        height={160}
-                        className="bg-white p-2 rounded-xl"
-                    />
-                    <p className="text-xs text-gray-300 mt-3">
-                        e-TIN: <span className="text-white font-bold">572113303278</span>
-                        <br />
-                        TRAD/DSCC/132971/2022
-                    </p>
+                    <h3 className="text-lg font-semibold mb-4 text-blue-800">University Information</h3>
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                        <p className="text-xs text-gray-600 mb-2">
+                            Accredited by the University Grants Commission of Bangladesh
+                        </p>
+                        <p className="text-xs text-gray-600">
+                            e-TIN: <span className="text-gray-800 font-medium">572113303278</span>
+                        </p>
+                        <p className="text-xs text-gray-600 mt-1">
+                            TRAD/DSCC/132971/2022
+                        </p>
+                    </div>
+                    <div className="mt-4 p-3 bg-gray-100 rounded-lg text-center">
+                        <p className="text-xs font-medium text-gray-700">Emergency Contact</p>
+                        <p className="text-sm font-semibold text-blue-800 mt-1">+880 1787666576,</p>
+                    </div>
                 </div>
             </div>
 
-            <hr className="border-t border-gray-700 my-8" />
-            <div className="text-center text-sm text-gray-400">
-                © {new Date().getFullYear()} Techlight IT Institute. All rights reserved.
+            <hr className="border-t border-gray-300 my-8" />
+            <div className="text-center text-sm text-gray-600">
+                © {new Date().getFullYear()}  Atish Dipankar University of Science & Technology (ADUST). All rights reserved.
             </div>
         </footer>
     );

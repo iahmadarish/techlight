@@ -16,13 +16,13 @@ const PRICE_OPTIONS = [
 const CATEGORY_OPTIONS = [
     {
         id: 1,
-        label: "Design",
+        label: "Computer Science",
         value: "design",
     },
 
     {
         id: 3,
-        label: "Development",
+        label: "English Literature",
         value: "development",
     },
     {
@@ -37,22 +37,22 @@ const CATEGORY_OPTIONS = [
     },
     {
         id: 6,
-        label: "Personal Development",
+        label: "Accounting",
         value: "personal-development",
     },
     {
         id: 7,
-        label: "Business",
+        label: "Data Science",
         value: "business",
     },
     {
         id: 8,
-        label: "Photography",
+        label: "Social Sciences",
         value: "photography",
     },
     {
         id: 9,
-        label: "Music",
+        label: "Science & Health",
         value: "music",
     },
 ];

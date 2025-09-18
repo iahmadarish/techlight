@@ -76,7 +76,7 @@ Our platform supports multiple learning styles with visual, auditory, and kinest
     {
       id: 4,
       icon: Award,
-      title: "Get Certificate",
+      title: "Skills Credits ",
       description: "Upon successful completion, receive industry-recognized certificates to showcase your newly acquired skills.",
       details: `Earn valuable credentials that validate your skills and enhance your professional profile:
 
@@ -113,6 +113,7 @@ Additionally, you'll gain access to our exclusive job board, career coaching ser
 
   return (
     <div className="container mx-auto px-4 py-16 bg-gray-50">
+      
       {/* Header Section */}
       <div className="text-center mb-16">
         <div className="flex items-center justify-center mb-4">
@@ -220,6 +221,7 @@ Additionally, you'll gain access to our exclusive job board, career coaching ser
           </div>
         </div>
       )}
+
     </div>
   );
 };

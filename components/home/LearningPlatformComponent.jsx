@@ -1,29 +1,28 @@
 "use client"
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, GraduationCap, BookOpen, Users, Award } from 'lucide-react';
 
-const LearningPlatformComponent = () => {
+const AcademicLearningPlatform = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Sample data - you can replace these with your actual images and content
   const slides = [
     {
       id: 1,
-      title: "Learn From Industry Experts",
-      description: "Whether you want to learn or to share what you know, you've come to the right place. As a global destination for online learning, we connect people through knowledge.",
-      image: "/hero/trainingroom.png" // Replace with your actual image path
+      title: "World-Class Academic Programs",
+      description: "Access rigorous degree programs taught by distinguished faculty with expertise across diverse disciplines. Our curriculum combines theoretical knowledge with practical application.",
+      image: "/campus/one.jpg" 
     },
     {
       id: 2,
-      title: "Interactive Learning Experience",
-      description: "Engage with dynamic content and hands-on projects that make learning both effective and enjoyable. Our platform adapts to your learning style.",
-      image: "/hero/trainingroom2.png" // Replace with your actual image path
+      title: "Cutting-Edge Research Opportunities",
+      description: "Engage in groundbreaking research with state-of-the-art facilities and mentorship from leading scholars. Contribute to knowledge creation and innovation in your field.",
+      image: "/campus/tow.jpg" 
     },
     {
       id: 3,
-      title: "Flexible Schedule",
-      description: "Learn at your own pace with 24/7 access to course materials. Perfect for busy professionals and students who need flexibility in their learning journey.",
-      image: "/hero/flexible.jpg" // Replace with your actual image path
+      title: "Academic Support Services",
+      description: "Benefit from comprehensive academic support including library resources, writing centers, tutoring, and faculty office hours designed to ensure your success.",
+      image: "/campus/three.jpg" 
     }
   ];
 
@@ -36,28 +35,42 @@ const LearningPlatformComponent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-16 px-4">
+    <div className="min-h-screen bg-white py-16 px-4">
       <div className="container mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
-            Changing <span className='text-red-600'> learning </span>for the better
+        <div className="text-start mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+            Excellence in <span className='text-blue-800'>Higher Education</span>
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Explore all of our courses and pick your suitable ones to enroll and start learning with us!
+          <p className="text-xl text-slate-600 max-w-3xl mx-start leading-relaxed">
+            Discover our comprehensive academic programs and join a community dedicated to knowledge, research, and innovation.
           </p>
         </div>
 
         {/* Main Content Section */}
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-blue-100">
           <div className="grid lg:grid-cols-2 gap-0 items-center min-h-[600px]">
-            {/* Image Section */}
-            <div className="relative h-[400px] lg:h-[600px] overflow-hidden">
+            {/* Image Section - FIXED */}
+            <div className="relative h-[400px] lg:h-[600px] overflow-hidden bg-gray-100">
+              {/* Actual image display */}
               <img 
-                src={slides[currentSlide].image}
-                alt="Learning environment"
-                className="w-full h-full object-cover transition-all duration-500"
+                src={slides[currentSlide].image} 
+                alt={slides[currentSlide].title}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // Fallback if image doesn't exist
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
               />
+              
+              {/* Fallback content if image doesn't load */}
+              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-800 to-blue-600 text-white p-8 text-center ">
+                <div>
+                  <h2 className="text-3xl font-bold mb-4">ADUST Virtual Campus</h2>
+                  <p className="text-blue-100">Experience higher education reimagined for the digital age</p>
+                </div>
+              </div>
               
               {/* Navigation Arrows */}
               <button 
@@ -93,25 +106,32 @@ const LearningPlatformComponent = () => {
             {/* Content Section */}
             <div className="p-8 lg:p-12">
               <div className="max-w-lg">
-                <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6 leading-tight">
-                  {slides[currentSlide].title}
-                </h2>
-                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                    <BookOpen className="w-5 h-5 text-blue-800" />
+                  </div>
+                  <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 leading-tight">
+                    {slides[currentSlide].title}
+                  </h2>
+                </div>
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed border-l-4 border-blue-200 pl-4 py-2">
                   {slides[currentSlide].description}
                 </p>
                 
                 {/* Call to Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-red-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-                    Start Learning
+                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                  <button className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold text-base transition-all duration-300 shadow-md hover:shadow-lg flex items-center">
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    Explore Programs
                   </button>
-                  <button className="border-2 hover:bg-red-500 border-slate-300 hover:border-slate-400 text-slate-700  px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:text-white">
-                    Browse Courses
+                  <button className="border border-blue-300 hover:bg-blue-50 text-blue-800 px-6 py-3 rounded-lg font-semibold text-base transition-all duration-300 flex items-center">
+                    <Users className="w-5 h-5 mr-2" />
+                    Meet Faculty
                   </button>
                 </div>
 
                 {/* Progress indicator */}
-                <div className="mt-8 flex items-center space-x-2">
+                <div className="flex items-center">
                   <div className="flex space-x-1">
                     {slides.map((_, index) => (
                       <div
@@ -133,30 +153,52 @@ const LearningPlatformComponent = () => {
           </div>
         </div>
 
-        {/* Features Section */}
+        {/* Academic Features Section */}
         <div className="grid md:grid-cols-3 gap-8 mt-16">
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-blue-100">
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <div className="w-8 h-8 bg-blue-600 rounded-full"></div>
+              <BookOpen className="w-8 h-8 text-blue-800" />
             </div>
-            <h3 className="text-xl font-semibold text-slate-800 mb-2">Expert Instructors</h3>
-            <p className="text-slate-600">Learn from industry professionals with years of experience</p>
+            <h3 className="text-xl font-semibold text-slate-800 mb-2">Comprehensive Curriculum</h3>
+            <p className="text-slate-600">Rigorous academic programs across diverse disciplines with industry-relevant content</p>
           </div>
           
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <div className="w-8 h-8 bg-green-600 rounded-full"></div>
+          <div className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-blue-100">
+            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Users className="w-8 h-8 text-blue-800" />
             </div>
-            <h3 className="text-xl font-semibold text-slate-800 mb-2">Flexible Learning</h3>
-            <p className="text-slate-600">Study at your own pace, anywhere and anytime</p>
+            <h3 className="text-xl font-semibold text-slate-800 mb-2">Expert Faculty</h3>
+            <p className="text-slate-600">Learn from distinguished professors and industry experts with years of experience</p>
           </div>
           
-          <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <div className="w-8 h-8 bg-purple-600 rounded-full"></div>
+          <div className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-blue-100">
+            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Award className="w-8 h-8 text-blue-800" />
             </div>
-            <h3 className="text-xl font-semibold text-slate-800 mb-2">Certificates</h3>
-            <p className="text-slate-600">Earn recognized certificates upon course completion</p>
+            <h3 className="text-xl font-semibold text-slate-800 mb-2">Accredited Degrees</h3>
+            <p className="text-slate-600">Earn recognized qualifications that enhance your career prospects and academic journey</p>
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="bg-blue-800 rounded-2xl p-8 mt-16 text-white text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div>
+              <div className="text-3xl font-bold mb-2">50+</div>
+              <div className="text-blue-200">Degree Programs</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold mb-2">200+</div>
+              <div className="text-blue-200">Faculty Members</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold mb-2">10k+</div>
+              <div className="text-blue-200">Students Enrolled</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold mb-2">95%</div>
+              <div className="text-blue-200">Graduation Rate</div>
+            </div>
           </div>
         </div>
       </div>
@@ -164,4 +206,4 @@ const LearningPlatformComponent = () => {
   );
 };
 
-export default LearningPlatformComponent;
+export default AcademicLearningPlatform;

@@ -8,6 +8,7 @@ import FilterCourse from "./_components/FilterCourse";
 import CourseCard from "./_components/CourseCard";
 import { useEffect, useMemo, useState } from "react";
 import Loader from "@/components/Loader";
+import LMSHeroSection from "./_components/LMSHeroSection";
 
 export default function CoursesPage() {
     const [courses, setCourses] = useState([]);
@@ -82,8 +83,9 @@ export default function CoursesPage() {
 
     return (
         <section className="container space-y-6 dark:bg-transparent py-6 pt-20">
+            <LMSHeroSection/>
             {/* //? header */}
-            <div className="flex items-baseline justify-between border-gray-200 border-b pb-2 lg:pb-6 flex-col gap-4 lg:flex-row">
+            <div className="flex items-baseline justify-between border-gray-200 border-b pb-2 pt-12 lg:pb-6 flex-col gap-4 lg:flex-row">
                 {/* //* Search */}
                 <SearchCourse onSearch={setSearchText} />
 

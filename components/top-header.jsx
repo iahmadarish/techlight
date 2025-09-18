@@ -10,8 +10,8 @@ export default function TopHeader() {
                 {/* //? Email */}
                 <div className="flex items-center gap-2 text-white hover:text-teal-400 transition duration-300 font-medium">
                     <Mail className="w-5 h-5" />{" "}
-                    <a href="mailto:info@techlightbd.com" className="hover:underline">
-                        info@techlight.com.bd
+                    <a href="mailto:support@adust.com" className="hover:underline">
+                        support@adust.com.bd
                     </a>
                 </div>
 
