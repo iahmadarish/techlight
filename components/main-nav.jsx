@@ -147,7 +147,7 @@ export function MainNav({ items, children }) {
                         <DropdownMenuItem className="cursor-pointer" asChild>
                             <Link href="/account">Profile</Link>
                         </DropdownMenuItem>
-                        {loggedInUser?.role === "instructor || student" && (
+                        {loggedInUser?.role === "instructor" && (
                             <DropdownMenuItem className="cursor-pointer" asChild>
                                 <Link href="/dashboard">Dashboard</Link>
                             </DropdownMenuItem>

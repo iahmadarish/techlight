@@ -16,6 +16,9 @@ export default async function HomePage() {
 
     return (
         <>
+        <main className="">
+
+       
             <HeroSection />
 
 
@@ -74,7 +77,7 @@ export default async function HomePage() {
             </section>
 
             <HowItWorks />
-            
+             </main>
         </>
     )
 }

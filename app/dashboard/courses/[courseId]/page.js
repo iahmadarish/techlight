@@ -97,9 +97,14 @@ const EditCourse = async ({ params: { courseId } }) => {
                             <ModulesForm initialData={modules} courseId={courseId} />
                         </div>
                         <div>
-                            <div className="flex items-center gap-x-2">
+                            <div className="">
+                                <div className="flex items-center gap-x-2">
                                 <IconBadge icon={CircleDollarSign} />
-                                <h2 className="text-xl">Sell you course</h2>
+                                <h2 className="text-xl">Is the course have paid or free ?</h2>
+                                </div>
+                                          <p className="mt-4 italic font-extralight">
+                                    Each university sets its own tuition and fee policies, which may include fixed costs per semester or per credit, regardless of the credit system.  
+                                </p>
                             </div>
                             <PriceForm initialData={{ price: course?.price }} courseId={courseId} />
                         </div>

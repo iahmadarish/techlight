@@ -26,7 +26,7 @@ export default function HeroSection() {
                 A
               </div>
               <div className="text-sm font-medium text-blue-800">
-                ASSUMPTA DIGITAL UNIVERSITY OF SCIENCE & TECHNOLOGY
+                ADUST DIGITAL UNIVERSITY OF SCIENCE & TECHNOLOGY
               </div>
             </div>
             
