@@ -4,7 +4,7 @@ import { formatPrice } from "@/lib/formatPrice";
 import { getCourseDetailsByInstructor } from "@/queries/courses";
 import { getUserByEmail } from "@/queries/users";
 import { redirect } from "next/navigation";
-
+import AdustInstructorDashboard from "./_components/AdustInstructorDashboard"
 const DashboardPage = async () => {
     //? route checking:
     const session = await auth();
@@ -31,7 +31,7 @@ const DashboardPage = async () => {
                 {/* //? total enrollments */}
                 <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Total Enrollments</CardTitle>
+                        <CardTitle className="text-sm font-medium">Total Student Enrollments</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <div className="text-2xl font-bold">{courseStats?.enrollments}</div>
@@ -39,7 +39,7 @@ const DashboardPage = async () => {
                 </Card>
 
                 {/* //? total revenue */}
-                <Card>
+                {/* <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                         <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
                     </CardHeader>
@@ -48,8 +48,9 @@ const DashboardPage = async () => {
                             {formatPrice(courseStats?.revenue)}
                         </div>
                     </CardContent>
-                </Card>
+                </Card> */}
             </div>
+            <AdustInstructorDashboard/>
         </div>
     );
 };
